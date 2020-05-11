@@ -1,0 +1,229 @@
+*{
+    margin:0;
+    padding:0;
+}
+::-webkit-scrollbar{width:4px; height:8px; }
+::-webkit-scrollbar-track{background-color:#e8e8e8;}
+::-webkit-scrollbar-thumb{background-color:rgba(80,135,229); border-radius:10px; cursor:pointer; }
+::-webkit-scrollbar-thumb:hover {background-color:rgba(80,135,229,0.8);}
+::-webkit-scrollbar-thumb:active {background-color:rgb(80,135,229);}
+ul{list-style:none;}
+
+.box_panel{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:#1d1c21;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+}
+.box_scroller{
+    padding:20px;
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+}
+.box_header{
+    font-size:36px;
+    color:#387685;
+    text-align:center;
+    padding-top:20px;
+}
+.box_titles{
+    padding-top:20px;
+    font-size:30px;
+    color:#387685;
+    border-bottom:2px dotted #387685;
+    position:relative;
+}
+.span_titles_right{
+    position:absolute;
+    top:20px;
+    right:0;
+}
+.box_detail{
+    padding:20px 0;
+    position:relative;
+}
+.user_left{
+    position:absolute;
+    width:400px;
+    top:20px;
+    bottom:20px;
+    align-items:center;
+    display:flex;
+}
+.user_right{
+    margin-left:400px;
+    min-height:128px;
+}
+.box_user{
+    width:128px;
+    height:128px;
+    border-radius:50%;
+    background:url(../img/img_user.jpg);
+    background-size:cover;
+    margin:auto;
+}
+.user_info li{
+    float:left;
+    width:50%;
+    line-height:30px;
+}
+.user_info_small li{
+    width:25%;
+}
+.user_info_middle li{
+    width:33.3%;
+}
+.user_info_large li{
+    width:100%;
+}
+.user_info li.li_large{
+    width:100%;
+}
+.user_info:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.span_user_label{
+    font-size:18px;
+    color:#387685;
+}
+.span_user_value{
+    font-size:16px;
+    color:#b8b7bc;
+}
+/*覆盖时间轴方法*/
+.box_detail .ivu-timeline-item-tail{
+    height:auto;
+    top:5px;
+    bottom:-5px;
+    border-left: 1px solid #666;
+}
+.box_detail .ivu-timeline-item-head{
+    top:5px;
+    background:#1d1c21;
+}
+.box_project_title{
+    font-size:18px;
+    color:#b8b7bc;
+}
+.box_detail .ivu-table-wrapper{
+    border:#1d1c21;
+}
+.box_detail .ivu-table:after{
+    background:#1d1c21;
+}
+.box_detail .ivu-table:before{
+    background:#333;
+}
+.box_detail .ivu-table th,.box_detail .ivu-table td{
+    background:#1d1c21;
+    font-size:14px;
+    border:none;
+    color:#b8b7bc;
+    border-top:1px solid #333;
+}
+.span_labels{
+    display: inline-block;
+    padding:2px 20px;
+    margin:5px 20px 5px auto;
+    border:1px solid #b8b7bc;
+    border-radius:4px;
+    font-size: 16px;
+    color: #b8b7bc;
+}
+/*媒体查询适配分辨率*/
+/* 大屏幕（大桌面显示器，大于等于 1200px）默认 */
+/* 中等屏幕（桌面显示器，大于等于 992px,小于 1200px） */
+@media (max-width:1200px){
+    .user_left{
+        width:300px;
+    }
+    .user_right{
+        margin-left:300px;
+    }
+}
+/* 小屏幕（平板，大于等于 768px,小于 992px */
+@media (max-width:992px){
+    .box_header{
+        font-size:32px;
+    }
+    .box_titles{
+        font-size:26px
+    }
+    .user_left{
+        width:250px;
+    }
+    .user_right{
+        margin-left:250px;
+    }
+    .span_user_label{
+        font-size:16px;
+    }
+    .span_user_value{
+        font-size:14px;
+    }
+    .user_info_small li{
+        width:33.3%;
+    }
+    .user_info_middle li{
+        width:50%;
+    }
+    .span_labels{
+        font-size: 14px;
+    }
+}
+/* 超小屏幕（手机，小于 768px */
+@media (max-width:768px){
+    .box_scroller{
+        padding:15px;
+    }
+    .box_header{
+        font-size:26px;
+    }
+    .box_titles{
+        font-size:20px;
+        padding-top:10px;
+    }
+    .box_detail{
+        padding:10px 0;
+    }
+    .user_left{
+        display:none;
+    }
+    .user_right{
+        margin-left:auto;
+        min-height:auto;
+    }
+    .user_info_small li{
+        width:50%;
+    }
+    .user_info_middle li{
+        width:100%;
+    }
+    .span_user_label{
+        font-size:14px;
+    }
+    .span_user_value{
+        font-size:12px;
+    }
+    .box_project_title{
+        font-size:14px;
+    }
+    /*覆盖时间轴方法*/
+    .box_detail .ivu-timeline-item-tail{
+        top:2px;
+        bottom:-2px;
+    }
+    .box_detail .ivu-timeline-item-head{
+        top:2px;
+    }
+    .span_labels{
+        font-size: 12px;
+    }
+}
